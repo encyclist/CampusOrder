@@ -31,11 +31,7 @@ public abstract class CallBack<T extends BaseResultModel> implements Callback<T>
             try{
                 if (response.body().code == 0) {
                     result(response.body());
-                } else if (response.body().code == 1001) {
-                    // 未登录
-                    Application.showToast(response.body().msg);
-                    Application.logout();
-                } else {
+                }else {
                     error(response.body().code, response.body().msg);
                 }
             }catch (Exception e){

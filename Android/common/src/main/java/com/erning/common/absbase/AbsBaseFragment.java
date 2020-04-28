@@ -40,7 +40,7 @@ public abstract class AbsBaseFragment extends Fragment {
 
     private boolean mIsFirstInitData = true;
     protected boolean haveView = true;
-    private RemoteService service = Network.remote();
+    protected RemoteService service = Network.remote();
 
     protected abstract int getLayoutResId();
     protected abstract void initData();
@@ -48,12 +48,6 @@ public abstract class AbsBaseFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-    }
-
-    public RemoteService getService(){
-        if (Network.Authorization.isEmpty())
-            Network.Authorization = getSpString("token");
-        return service;
     }
 
     public void closeInputMethod(EditText editText) {
@@ -92,9 +86,6 @@ public abstract class AbsBaseFragment extends Fragment {
             mIsFirstInitData = false;
             // 触发
             onFirstInit();
-        }
-        if("".equals(Network.Authorization)){
-            Network.Authorization = getSpString("token");
         }
         // 当View创建完成后初始化数据
         initData();

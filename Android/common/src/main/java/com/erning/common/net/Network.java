@@ -15,7 +15,7 @@ import retrofit2.Retrofit;
  * @version 1.0.0
  */
 public class Network {
-    public static final String ROOT = "http://121.37.162.27/";
+    public static final String ROOT = "http://47.101.44.42:10208/";
     public static String Authorization = "";
 
     private static Network instance = new Network();
@@ -44,10 +44,10 @@ public class Network {
                 return chain.proceed(newRequest);
             }
         });*/
-        SignInterceptor signInterceptor = new SignInterceptor.Builder()
+        /*SignInterceptor signInterceptor = new SignInterceptor.Builder()
                 .setKey("qwertyuiopASDFGHJKLzxcvbnm")
                 .build();
-        builder.addInterceptor(signInterceptor);
+        builder.addInterceptor(signInterceptor);*/
         if(BuildConfig.DEBUG) {
             builder.addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY));
         }
