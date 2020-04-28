@@ -18,4 +18,7 @@ public interface RemoteService {
 
     @POST("register")//注册
     Call<JsonRst> register(@Query("phone") String phone, @Query("password")String password);
+
+    @POST("forget")//找回密码
+    Call<JsonRst> forget(@Query("phone")String phone, @Query("code")String code, @Query("pwd")String pwd);
 }

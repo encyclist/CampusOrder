@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="46dp">
+
+    <TextView
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:singleLine="true"
+        android:lines="1"
+        android:ellipsize="end"
+        android:id="@+id/text_title"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/img_title_back"
+        android:padding="8dp"
+        android:tint="#fff"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_back"
+        android:layout_width="34dp"
+        android:layout_height="34dp"/>
+
+    <TextView
+        android:id="@+id/text_title_text"
+        android:paddingEnd="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:layout_alignParentEnd="true"
+        android:id="@+id/img_title_img"
+        android:padding="8dp"
+        android:tint="#fff"
+        android:layout_centerVertical="true"
+        android:layout_width="34dp"
+        android:layout_height="34dp"/>
+
+</RelativeLayout>
