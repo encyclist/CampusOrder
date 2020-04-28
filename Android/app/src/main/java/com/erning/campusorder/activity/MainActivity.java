@@ -1,8 +1,10 @@
-package com.erning.campusorder;
+package com.erning.campusorder.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.erning.campusorder.R;
 
 public class MainActivity extends AppCompatActivity {
 

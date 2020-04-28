@@ -1,9 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
     tools:context=".activity.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#44333333" />
+
+    <TextView
+        android:gravity="center_vertical"
+        android:textSize="32sp"
+        android:textColor="#fff"
+        android:text="@string/app_name"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawablePadding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@mipmap/ic_logo" />
+
+    <EditText
+        android:textColorHint="#e4eff1"
+        android:textColor="#fff"
+        android:hint="手机号"
+        android:padding="12dp"
+        android:background="@null"
+        android:textSize="16sp"
+        android:id="@+id/edit_login_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="32dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#55ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/edit_login_phone"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <EditText
+        android:id="@+id/edit_login_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@null"
+        android:hint="密码"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="#fff"
+        android:textColorHint="#e4eff1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#55ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/edit_login_password"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/edit_login_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@null"
+        android:hint="用户名"
+        android:padding="12dp"
+        android:textColor="#fff"
+        android:textColorHint="#e4eff1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <View
+        android:visibility="gone"
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#55ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/edit_login_name"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:id="@+id/btn_login_login"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="登录"
+        app:qmui_radius="5dp"
+        app:qmui_backgroundColor="#dd25b4e0"
+        app:qmui_borderWidth="0px"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toBottomOf="@id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:textColor="#25b4e0"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_login_login"
+        app:layout_constraintEnd_toEndOf="@id/btn_login_login"
+        android:id="@+id/text_login_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册新用户"
+        tools:layout_editor_absoluteX="293dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+    <TextView
+        android:id="@+id/text_login_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="找回密码"
+        android:textColor="#25b4e0"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btn_login_login"
+        app:layout_constraintTop_toBottomOf="@id/btn_login_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

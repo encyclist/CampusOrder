@@ -12,7 +12,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -20,6 +20,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -33,4 +37,7 @@ dependencies {
     implementation project(path: ':common')
     // QMUI
     implementation 'com.qmuiteam:qmui:2.0.0-alpha01'
+    implementation "net.qiujuer.genius:ui:2.1.1"
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    api 'com.jakewharton:butterknife:10.2.0'
 }
