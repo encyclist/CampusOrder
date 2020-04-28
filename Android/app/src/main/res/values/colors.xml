@@ -3,4 +3,29 @@
     <color name="colorPrimary">#3499ff</color>
     <color name="colorPrimaryDark">#1e90ff</color>
     <color name="colorAccent">#f34073</color>
+    <color name="colorBase">#F5F6FA</color>
+    <color name="colorPrimaryDiv">#00a4ff</color>
+    <color name="colorNormal">#868686</color>
+    <color name="colorYellow">#ffa500</color>
+
+
+    <color name="colorText">#333333</color>
+    <color name="colorGary">#999999</color>
+    <color name="colorGary2">#777777</color>
+    <color name="colorGary3">#cccccc</color>
+    <color name="colorGary4">#bbbbbb</color>
+    <color name="colorGary5">#a6a6a6</color>
+    <color name="colorGary6">#666666</color>
+    <color name="colorGary7">#838383</color>
+    <color name="colorGary8">#eeeeee</color>
+
+    <color name="bg">#F5F6F8</color>
+    <color name="white">#ffffff</color>
+    <color name="edit">#f5f5f5</color>
+    <color name="yellow">#ffc12d</color>
+    <color name="black">#010101</color>
+    <color name="red">#f20c00</color>
+    <color name="green">#03AD90</color>
+    <color name="deepGreen">#028a73</color>
+    <color name="deepBlue">#3e4d60</color>
 </resources>
