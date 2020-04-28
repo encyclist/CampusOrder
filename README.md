@@ -15,6 +15,51 @@
 * dao：供service层操作数据库
 * mapper：里面有SQL语句，直接操作数据库
 
+## 数据库的设计
+管理员表：tb_admin：
+| 名称 | 类型(长度)   | 说明 |
+| ----- | --------- | ----------- |
+| ID | int(11) | 用户ID |
+| USERNAME | varchar(255) | 用户名 |
+| PASSWORD | varchar(255) | 用户密码 |
+| TEL | varchar(255) | 手机号 |
+| AUTHORITY | varchar(255) | 权限 |
+| STATE | varchar(255) | 状态 |
+| DELETE_FLAG | varchar(255) | 是否删除 |
+
+学生表：tb_student：
+| 名称 | 类型(长度)   | 说明 |
+| ----- | --------- | ----------- |
+| id | int(11) | 用户ID |
+| tel | varchar(255) | 用户名 |
+| password | varchar(255) | 用户密码 |
+
+餐品表：tb_product：
+| 名称 | 类型(长度)   | 说明 |
+| ----- | --------- | ----------- |
+| id | int(11) | ID |
+| name | varchar(255) | 餐品名 |
+| img | varchar(255) | 图片 |
+| description | varchar(255) | 描述 |
+| price | decimal(10,2) | 价格（最长10位，小数点后保留两位） |
+
+订单表：tb_order：
+| 名称 | 类型(长度)   | 说明 |
+| ----- | --------- | ----------- |
+| -id | int(11) | ID |
+| -table | varchar(255) | 桌号 |
+| -price | decimal(10,2) | 订单总价 |
+| -state | varchar(255) | 支付状态 |
+
+订单与餐品关系表：tb_order_product：
+| 名称 | 类型(长度)   | 说明 |
+| ----- | --------- | ----------- |
+| -id | int(11) | ID |
+| -order_id | int(11) | 订单id |
+| -product_id | int(11) | 餐品id |
+| -num | int(11) | 餐品数量 |
+
+
 ## 老师可能提的问题
 * 网页怎么和后台通信：使用Ajax进行请求
 * 请求的处理流程：controller收到请求，验证传来的数据是否正确，service进行处理并调用dao来操作数据库，dao和mapper是对应的，mapper里的sql语句就会执行，来完成对数据的增删改查
