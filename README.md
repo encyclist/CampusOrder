@@ -46,18 +46,18 @@
 订单表：tb_order：
 | 名称 | 类型(长度)   | 说明 |
 | ----- | --------- | ----------- |
-| -id | int(11) | ID |
-| -table | varchar(255) | 桌号 |
-| -price | decimal(10,2) | 订单总价 |
-| -state | varchar(255) | 支付状态 |
+| id | int(11) | ID |
+| table | varchar(255) | 桌号 |
+| price | decimal(10,2) | 订单总价 |
+| state | varchar(255) | 支付状态 |
 
 订单与餐品关系表：tb_order_product：
 | 名称 | 类型(长度)   | 说明 |
 | ----- | --------- | ----------- |
-| -id | int(11) | ID |
-| -order_id | int(11) | 订单id |
-| -product_id | int(11) | 餐品id |
-| -num | int(11) | 餐品数量 |
+| id | int(11) | ID |
+| order_id | int(11) | 订单id |
+| product_id | int(11) | 餐品id |
+| num | int(11) | 餐品数量 |
 
 
 ## 老师可能提的问题
