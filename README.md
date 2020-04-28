@@ -15,6 +15,9 @@
 * dao：供service层操作数据库
 * mapper：里面有SQL语句，直接操作数据库
 
+## 技术要求
+使用Idea进行开发，基于Java8，使用Mysql作为数据库，使用tomcat运行，使用springboot作为框架
+
 ## 数据库的设计
 管理员表：tb_admin：
 | 名称 | 类型(长度)   | 说明 |
