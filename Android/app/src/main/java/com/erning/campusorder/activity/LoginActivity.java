@@ -22,6 +22,7 @@ public class LoginActivity extends PresenterActivity<LoginPresenter> {
     @BindView(R.id.edit_login_name) EditText edit_name;
     @BindView(R.id.view4) View view;
     @BindView(R.id.text_login_register) TextView text_change;
+    @BindView(R.id.text_login_forget) TextView text_forget;
     @BindView(R.id.btn_login_login) QMUIRoundButton btn_login;
 
     @Override
@@ -52,26 +53,31 @@ public class LoginActivity extends PresenterActivity<LoginPresenter> {
         }
     }
 
+    @OnClick(R.id.text_login_forget)
+    void forget(){
+        startActivity(ForgetActivity.class);
+    }
+
     @OnClick(R.id.text_login_register)
     void register(){
         if ("login".equals(action)){
             action = "register";
             text_change.setText("已有帐号登录");
             btn_login.setText("注册");
-            edit_password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD | InputType.TYPE_CLASS_TEXT);
             view.setVisibility(View.VISIBLE);
             edit_name.setVisibility(View.VISIBLE);
+            text_forget.setVisibility(View.GONE);
         }else{
             action = "login";
             text_change.setText("注册新账号");
             btn_login.setText("登录");
-            edit_password.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
             view.setVisibility(View.GONE);
             edit_name.setVisibility(View.GONE);
+            text_forget.setVisibility(View.VISIBLE);
         }
     }
 
-    void loginSuccess(String id) {
+    public void loginSuccess(String id) {
         putSpString("id",id);
         startActivity(MainActivity.class);
         this.finish();
