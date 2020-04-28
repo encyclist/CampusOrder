@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <resultMap id="user" type="com.example.demo.entity.User">
+        <result column="ID" property="id"/>
+        <result column="USERNAME" property="userName"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="TEL" property="tel"/>
+        <result column="AUTHORITY" property="authority"/>
+        <result column="DELETE_FLAG" property="delete_flag"/>
+        <result column="STATE" property="state"/>
+    </resultMap>
+
+    <!-- 登录 -->
+    <select id="loginUser" resultType="com.example.demo.entity.User">
+        SELECT
+            ID        id,
+            USERNAME  userName,
+            PASSWORD  password,
+            AUTHORITY authority,
+            STATE     state
+        FROM
+            tb_admin
+        WHERE USERNAME = #{userName}
+              AND PASSWORD = #{password}
+              AND DELETE_FLAG = "1"
+    </select>
+
+    <insert id="addUser">
+        INSERT INTO tb_user (USERNAME, PASSWORD, TEL, AUTHORITY, DELETE_FLAG, STATE)
+        VALUES (#{userName}, #{password}, #{tel}, #{authority}, "1", #{state})
+    </insert>
+
+    <update id="updateUser">
+        UPDATE tb_user
+        SET
+            USERNAME  = #{userName},
+            PASSWORD  = #{password},
+            TEL  = #{tel},
+            AUTHORITY = #{authority},
+            STATE     = #{state}
+        WHERE ID = #{id}
+    </update>
+
+    <update id="deleteUser">
+        UPDATE tb_user
+        SET
+            DELETE_FLAG = "0"
+        WHERE ID = #{id}
+    </update>
+
+    <select id="selectUser" resultMap="user">
+        SELECT
+        ID,
+        USERNAME,
+        PASSWORD,
+        TEL,
+        AUTHORITY,
+        STATE
+        from tb_user
+        where DELETE_FLAG = "1"
+        <if test="name!=null and name!=''">
+            and USERNAME like concat('%',#{name},'%')
+        </if>
+        <if test="id!=null and id!='' and id!=0">
+            and ID = #{id}
+        </if>
+    </select>
+</mapper>

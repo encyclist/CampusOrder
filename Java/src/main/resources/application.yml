@@ -1,0 +1,12 @@
+server:
+  port: 10208
+  servlet:
+    context-path: /
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.example.entity
+
+
