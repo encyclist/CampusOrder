@@ -1,14 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.MyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="169dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_my"/>
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/img_my_avatar"
+            android:layout_marginStart="30dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/img_a_d_1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
+
+        <TextView
+            android:id="@+id/text_my_name"
+            android:layout_marginStart="10dp"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:layout_toEndOf="@id/img_my_avatar"
+            android:layout_centerVertical="true"
+            android:text="君の名は"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <View
+        android:background="@color/colorGary8"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_my_pwd"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_my_1"
+            android:src="@drawable/ic_pwd"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_my_1"
+            android:layout_marginStart="10dp"
+            android:text="修改密码"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:padding="10dp"
+            android:tint="@color/colorGary3"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_more"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGary3"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_my_clear"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:padding="4dp"
+            android:id="@+id/img_my_2"
+            android:src="@drawable/ic_clear"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_my_2"
+            android:layout_marginStart="10dp"
+            android:text="清空缓存"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:padding="10dp"
+            android:tint="@color/colorGary3"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_more"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGary3"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <RelativeLayout
+        android:id="@+id/relative_my_logout"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_my_3"
+            android:src="@drawable/ic_logout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_my_3"
+            android:layout_marginStart="10dp"
+            android:text="退出登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:padding="10dp"
+            android:tint="@color/colorGary3"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_more"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGary3"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+</LinearLayout>

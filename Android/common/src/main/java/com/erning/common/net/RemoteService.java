@@ -21,4 +21,7 @@ public interface RemoteService {
 
     @POST("forget")//找回密码
     Call<JsonRst> forget(@Query("phone")String phone, @Query("code")String code, @Query("pwd")String pwd);
+
+    @POST("getUserInfo")//获取用户信息
+    Call<JsonRst> getUserInfo(@Query("id")String id);
 }

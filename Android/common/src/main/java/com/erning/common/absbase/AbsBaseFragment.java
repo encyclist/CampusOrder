@@ -40,7 +40,7 @@ public abstract class AbsBaseFragment extends Fragment {
 
     private boolean mIsFirstInitData = true;
     protected boolean haveView = true;
-    private RemoteService service = Network.remote();
+    protected RemoteService service = Network.remote();
 
     protected abstract int getLayoutResId();
     protected abstract void initData();
@@ -48,10 +48,6 @@ public abstract class AbsBaseFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-    }
-
-    public RemoteService getService(){
-        return service;
     }
 
     public void closeInputMethod(EditText editText) {
