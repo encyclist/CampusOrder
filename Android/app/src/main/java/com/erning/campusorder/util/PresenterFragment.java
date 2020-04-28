@@ -1,28 +1,30 @@
 package com.erning.campusorder.util;
 
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.CallSuper;
 
-import com.erning.common.absbase.AbsBaseActivity;
+import com.erning.common.absbase.AbsBaseFragment;
+import com.erning.common.utils.LogUtils;
 
 import butterknife.ButterKnife;
 
-public abstract class PresenterActivity<Presenter extends ActivityPresenter> extends AbsBaseActivity {
-
+public abstract class PresenterFragment<Presenter extends FragmentPresenter> extends AbsBaseFragment {
     protected Presenter presenter;
 
     @Override
-    protected void initWindow() {
-        super.initWindow();
+    protected void initWidget(View root) {
+        super.initWidget(root);
         // 初始化Presenter
         presenter = initPresenter();
     }
 
     @Override
     @CallSuper
-    protected void initControls() {
-        ButterKnife.bind(this);
+    protected void onFirstInit() {
+        LogUtils.d("那啥");
+        ButterKnife.bind(this,mRoot);
     }
 
     public String getUserId(){
@@ -35,19 +37,19 @@ public abstract class PresenterActivity<Presenter extends ActivityPresenter> ext
     protected abstract Presenter initPresenter();
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         // 界面关闭时进行销毁的操作
         if (presenter != null) {
             presenter.destroy();
         }
     }
-
+    
     public void setPresenter(Presenter basePresenter) {
         presenter = basePresenter;
     }
 
     public void showError(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), s, Toast.LENGTH_SHORT).show();
     }
 }

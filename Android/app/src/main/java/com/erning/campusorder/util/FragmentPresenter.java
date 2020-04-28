@@ -3,18 +3,14 @@ package com.erning.campusorder.util;
 import com.erning.common.net.Network;
 import com.erning.common.net.RemoteService;
 
-public abstract class ActivityPresenter<View extends PresenterActivity> {
+public abstract class FragmentPresenter<View extends PresenterFragment> {
     private View mView;
     protected RemoteService service = Network.remote();
 
     public abstract void init();
 
-    public ActivityPresenter(View view) {
+    public FragmentPresenter(View view) {
         setView(view);
-    }
-
-    public String getUserId(){
-        return mView.getUserId();
     }
 
     /**
@@ -23,6 +19,10 @@ public abstract class ActivityPresenter<View extends PresenterActivity> {
     protected void setView(View view) {
         this.mView = view;
         this.mView.setPresenter(this);
+    }
+
+    public String getUserId(){
+        return mView.getUserId();
     }
 
     /**
@@ -34,7 +34,7 @@ public abstract class ActivityPresenter<View extends PresenterActivity> {
     }
 
     public void destroy() {
-        PresenterActivity view = mView;
+        PresenterFragment view = mView;
         mView = null;
         if (view != null) {
             // 把Presenter设置为NULL

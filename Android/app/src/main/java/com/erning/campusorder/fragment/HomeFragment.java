@@ -1,32 +1,32 @@
 package com.erning.campusorder.fragment;
 
-
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.erning.campusorder.R;
+import com.erning.campusorder.presenter.HomePresenter;
+import com.erning.campusorder.util.PresenterFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class HomeFragment extends Fragment {
+import butterknife.BindView;
 
-
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
+public class HomeFragment extends PresenterFragment<HomePresenter> {
+    @BindView(R.id.img_title_back) ImageView img_back;
+    @BindView(R.id.text_title) TextView text_title;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+    protected int getLayoutResId() {
+        return R.layout.fragment_home;
     }
 
+    @Override
+    protected HomePresenter initPresenter() {
+        return new HomePresenter(this);
+    }
+
+    @Override
+    protected void initData() {
+        img_back.setVisibility(View.INVISIBLE);
+        text_title.setText("点餐");
+    }
 }

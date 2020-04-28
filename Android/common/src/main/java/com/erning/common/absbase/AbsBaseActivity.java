@@ -67,8 +67,6 @@ public abstract class AbsBaseActivity extends AppCompatActivity {
      * })
      */
     public RemoteService getService(){
-        if (Network.Authorization.isEmpty())
-            Network.Authorization = getSpString("token");
         return service;
     }
 
