@@ -1,11 +1,13 @@
 package com.erning.campusorder.fragment;
 
+import android.content.Intent;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
 import com.erning.campusorder.Application;
 import com.erning.campusorder.R;
+import com.erning.campusorder.activity.ForgetActivity;
 import com.erning.campusorder.activity.ResetActivity;
 import com.erning.campusorder.entity.User;
 import com.erning.campusorder.presenter.MyPresenter;
@@ -58,6 +60,8 @@ public class MyFragment extends PresenterFragment<MyPresenter> {
 
     @OnClick(R.id.relative_my_pwd)
     public void reset(){
-        startActivity(ResetActivity.class);
+        Intent intent = new Intent(getActivity(), ForgetActivity.class);
+        intent.putExtra("action","reset");
+        startActivity(intent);
     }
 }
