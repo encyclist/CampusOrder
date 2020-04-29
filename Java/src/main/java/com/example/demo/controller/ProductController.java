@@ -32,33 +32,26 @@ public class ProductController {
         log.info("addProduct入参product:{}", product);
         Map<String, Object> map = Maps.newHashMap();
         try {
-            productService.addProduct(product);
+            if (product.getId() == null) {
+                productService.addProduct(product);
+                map.put("msg", "新增餐品成功");
+            } else {
+                productService.updateProduct(product);
+                map.put("msg", "修改餐品成功");
+            }
             map.put("code", 0);
-            map.put("msg", "新增餐品成功");
         } catch (Exception e) {
             log.error("e:{}", e);
             map.put("code", 1);
-            map.put("msg", "新增餐品失败");
+            if (product.getId() == null) {
+                map.put("msg", "新增餐品失败");
+            } else {
+                map.put("msg", "修改餐品失败");
+            }
         }
         return map;
     }
 
-    @ResponseBody
-    @RequestMapping("/updateProduct")
-    public Map<String, Object> updateProduct(@RequestBody Product product) {
-        log.info("updateProduct入参product:{}", product);
-        Map<String, Object> map = Maps.newHashMap();
-        try {
-            productService.updateProduct(product);
-            map.put("code", 0);
-            map.put("msg", "修改餐品成功");
-        } catch (Exception e) {
-            log.error("e:{}", e);
-            map.put("code", 1);
-            map.put("msg", "修改餐品失败");
-        }
-        return map;
-    }
     @ResponseBody
     @RequestMapping("/deleteProduct")
     public Map<String, Object> deleteProduct(@RequestBody long id) {
@@ -75,6 +68,7 @@ public class ProductController {
         }
         return map;
     }
+
     @ResponseBody
     @RequestMapping("/selectProduct")
     public Map<String, Object> selectProduct(@RequestBody ProductQueryCondition condition) {
