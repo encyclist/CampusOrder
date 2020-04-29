@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐品管理</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/blogmanagement.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>餐品列表</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="div_searchUserList" class="ibox float-e-margins">
+                            <form class="navbar-form navbar-left form_blogSearch" role="search">
+                                <div class="div_blogSearch_top">
+                                    <div class="form-group div_blogSearch">
+                                        餐品名：<input id="input_productName" type="text"
+                                                    class="form-control input_blog_title"
+                                                    placeholder="请输入餐品名">
+                                    </div>
+                                    <div class="form-group div_blogSearch">
+                                        <button type="button" onclick="querySubmit(1)" class="btn btn-success">查询
+                                        </button>
+                                        <button type="button" onclick="clearForm()" class="btn btn-info">重置</button>
+                                    </div>
+                                </div>
+                                <div class="div_blogSearch_top">
+                                    <div class="form-group div_blogAdd">
+                                        <button type="button" data-toggle="modal" data-target="#myModal" onclick="addProductButton()" class="btn btn-success">新增
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p style="clear:both"></p>
+                            <div id="div_productTable" class="div_blogTable">
+                            </div>
+                            <nav id="div_pageBar" class="navbar-right div_pageBar" aria-label="Page navigation">
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 id="modal_title_product" class="modal-title"></h4>
+            </div>
+            <div id="div_detailType_body">
+                <form class="form-horizontal form_blogType">
+                    <input type="hidden" id="productId">
+                    <div class="form-group"><label class="col-sm-3 control-label">餐品名称:</label>
+                        <div class="col-sm-8"><input class="form-control" type="text" id="productName"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-3 control-label">餐品图片:</label>
+                        <input class="form-control" type="hidden" id="input_productImg">
+                        <div class="col-sm-5"><input class="form-control" type="file" id="productImg"></div>
+                        <div class="col-sm-4"><img id="img_productImg" class="img_blogTypeImg"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-3 control-label">餐品描述:</label>
+                        <div class="col-sm-8"><textarea class="form-control" id="productDescription"></textarea></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-3 control-label">餐品价格:</label>
+                        <div class="col-sm-8"><input class="form-control" type="number" id="productPrice"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <label class="col-sm-3"></label>
+                <div class="col-sm-2">
+                    <button class="btn btn-success btn_blogType" onclick="addProduct()" >确定</button>
+                </div>
+                <label class="col-sm-2"></label>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btn_product_close" data-dismiss="modal">关闭</button>
+                </div>
+                <label class="col-sm-3"></label>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 全局js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ajaxpage.js"></script>
+
+<!-- Peity -->
+<script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- 自定义js -->
+<script src="js/url.js"></script>
+<script src="js/content.js"></script>
+<script src="js/pageInfoBar.js"></script>
+<script src="js/productmanager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+.row {
+    width: 100%;
+    /* display: block; */
+    line-height: 60px;
+    text-align: center;
+}
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    position: relative;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin: 0px 20px;
+    box-sizing: border-box;
+}
+input[type="checkbox"] + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#simple_1:checked + label.green,
+#simple_2:checked + label.green,
+#simple_3:checked + label.green,
+#simple_4:checked + label.green,
+#simple_5:checked + label.green,
+#simple_1_auto:checked + label.green,
+#simple_2_auto:checked + label.green,
+#simple_3_auto:checked + label.green,
+#simple_4_auto:checked + label.green,
+#simple_5_auto:checked + label.green{
+    background: #AEDCAE;
+}
+#simple_1:checked + label.green:after,
+#simple_2:checked + label.green:after,
+#simple_3:checked + label.green:after,
+#simple_4:checked + label.green:after,
+#simple_5:checked + label.green:after,
+#simple_1_auto:checked + label.green:after,
+#simple_2_auto:checked + label.green:after,
+#simple_3_auto:checked + label.green:after,
+#simple_4_auto:checked + label.green:after,
+#simple_5_auto:checked + label.green:after{
+    background: #5CB85C;
+	 
+}
+#simple_1:checked + label:after,
+#simple_2:checked + label:after,
+#simple_3:checked + label:after,
+#simple_4:checked + label:after,
+#simple_5:checked + label:after,
+#simple_1_auto:checked + label:after,
+#simple_2_auto:checked + label:after,
+#simple_3_auto:checked + label:after,
+#simple_4_auto:checked + label:after,
+#simple_5_auto:checked + label:after{
+    left: calc(100% - 20px);
+}
+#simple_1 + label,
+#simple_2 + label,
+#simple_3 + label,
+#simple_4 + label,
+#simple_5 + label,
+#simple_1_auto + label,
+#simple_2_auto + label,
+#simple_3_auto + label,
+#simple_4_auto + label,
+#simple_5_auto + label{
+    background: #ECA9A7;/*鍒濆妗嗛鑹�*/
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #aaa;/*妗嗛槾褰�*/
+}
+#simple_1 + label:after,
+#simple_2 + label:after,
+#simple_3 + label:after,
+#simple_4 + label:after,
+#simple_5 + label:after,
+#simple_1_auto + label:after,
+#simple_2_auto + label:after,
+#simple_3_auto + label:after,
+#simple_4_auto + label:after,
+#simple_5_auto + label:after{
+    background: #D9534F;/*鍒濆鐞冮鑹�*/
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px #aaa;/*鐞冮槾褰�*/
+}
+

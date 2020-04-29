@@ -1,0 +1,103 @@
+body {
+    -moz-user-select: text; /*火狐*/
+    -webkit-user-select: text; /*webkit浏览器*/
+    -ms-user-select: text; /*IE10*/
+    -khtml-user-select: text; /*早期浏览器*/
+    user-select: text;
+}
+
+.label_blog_title {
+    margin-top: 6px;
+    font-size: 16px;
+    text-align: right;
+}
+
+.input_blog_title {
+    height: 34px;
+}
+.myEditor{
+    margin-top: 0;
+}
+
+@media screen and (max-width: 1218px) {
+    .myEditor{
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 993px) {
+    .div_blog_top {
+        height: 60px;
+    }
+    .myEditor{
+        margin-top: 0;
+    }
+}
+
+/*.div_blog_title {
+    height: 60px;
+}*/
+
+.div_blog_button {
+    margin-top: 20px;
+}
+
+.div_pageBar {
+    margin-right: 20px;
+    margin-top: -85px;
+}
+
+.div_blogTable {
+    margin-bottom: 90px;
+}
+
+.div_blogTable table {
+    width: 100%;
+    border: 1px solid #dddddd;
+}
+
+.div_blogTable table tr td {
+    text-align: center;
+}
+
+.div_blogTable table tr td:last-child {
+    width: 20%;
+    text-align: center;
+}
+
+.form_blogSearch {
+    width: 100%;
+}
+
+.div_blogSearch {
+    width: 33%;
+}
+
+.div_blogSearch_top {
+    margin-top: 10px;
+}
+
+.div_modal {
+    width: 100%;
+}
+
+.div_modal_dialog {
+    width: 90%;
+}
+
+.div_blogAdd {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.form_blogType {
+    margin-top: 20px;
+}
+
+.img_blogTypeImg {
+    height: 100px;
+    width: 100px;
+}
+
+
+

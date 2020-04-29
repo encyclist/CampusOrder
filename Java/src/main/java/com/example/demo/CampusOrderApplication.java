@@ -17,10 +17,9 @@ public class CampusOrderApplication {
 	@Bean
 	MultipartConfigElement multipartConfigElement() { // 设置临时路径
 		// 上传地址
-//        String path = "C:/Users/rex.li/IdeaProjects/blog/src/main/webapp/uploadImg/";
-        String path = "F:/uploadImg/";
+//        String path = "F:/uploadImg/";
 		// linux地址
-//		String path = "/usr/local/project/img/";
+		String path = "/usr/local/project/img/";
 		MultipartConfigFactory factory = new MultipartConfigFactory();
 		factory.setLocation(path);
 		return factory.createMultipartConfig();
