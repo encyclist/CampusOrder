@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img_item_product"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_item_product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="叫我女王大人"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_item_product"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textSize="12sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:id="@+id/text_item_product_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="说了多少次了，不要叫我大王，叫我女王大人！说了多少次了，不要叫我大王，叫我女王大人！说了多少次了，不要叫我大王，叫我女王大人！说了多少次了，不要叫我大王，叫我女王大人！说了多少次了，不要叫我大王，叫我女王大人！"
+        android:textColor="#555"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_item_product_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_item_product_name" />
+
+    <ImageView
+        android:src="@drawable/ic_add"
+        android:id="@+id/img_item_product_add"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="4dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_item_product_desc" />
+
+    <TextView
+        android:id="@+id/text_item_product_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/img_item_product_add"
+        app:layout_constraintEnd_toStartOf="@+id/img_item_product_add"
+        app:layout_constraintTop_toTopOf="@+id/img_item_product_add" />
+
+    <ImageView
+        android:src="@drawable/ic_sub"
+        android:id="@+id/img_item_product_sub"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="4dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/text_item_product_count"
+        app:layout_constraintTop_toBottomOf="@+id/text_item_product_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

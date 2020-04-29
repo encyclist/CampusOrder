@@ -51,7 +51,7 @@ public class MyFragment extends PresenterFragment<MyPresenter> {
     @OnClick(R.id.relative_my_logout)
     public void logout(){
         new AlertDialog.Builder(getActivity())
-                .setTitle("陛下三思")
+                .setTitle("陛下再三思")
                 .setMessage("退出登录后要重新登陆，确定吗？")
                 .setPositiveButton("确定", (dialog, which) -> Application.logout())
                 .setNegativeButton("取消",null)

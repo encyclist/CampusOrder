@@ -14,8 +14,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity {
+    private Unbinder unbinder;
+
     @BindView(R.id.nav_view) BottomNavigationView navigationView;
     @BindView(R.id.pager_main) ViewPager viewPager;
 
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
 
         HomeFragment homeFragment = new HomeFragment();
         OrderFragment orderFragment = new OrderFragment();
@@ -69,5 +72,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (unbinder != null){
+            unbinder.unbind();
+        }
     }
 }

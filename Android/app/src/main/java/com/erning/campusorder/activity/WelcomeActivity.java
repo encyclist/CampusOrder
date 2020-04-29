@@ -22,8 +22,10 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class WelcomeActivity extends AppCompatActivity {
+    private Unbinder unbinder;
     private ColorDrawable mBgDrawable;
 
     @BindView(R.id.text_welcome_version)
@@ -34,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         QMUIStatusBarHelper.translucent(this);
         View root = findViewById(R.id.activity_welcome);
         int color = Color.parseColor("#31373d");
@@ -94,4 +96,13 @@ public class WelcomeActivity extends AppCompatActivity {
             return object.mBgDrawable.getColor();
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (unbinder != null){
+            unbinder.unbind();
+        }
+    }
 }

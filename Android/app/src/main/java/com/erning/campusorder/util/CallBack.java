@@ -2,6 +2,7 @@ package com.erning.campusorder.util;
 
 import android.util.Log;
 
+import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 
 import com.erning.campusorder.Application;
@@ -53,6 +54,7 @@ public abstract class CallBack<T extends BaseResultModel> implements Callback<T>
     }
 
     protected abstract void result(@NonNull T body);
+    @CallSuper
     protected void error(int code, @NonNull String message){
         Application.showToast(message);
     };
