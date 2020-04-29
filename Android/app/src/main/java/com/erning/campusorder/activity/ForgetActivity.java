@@ -1,5 +1,6 @@
 package com.erning.campusorder.activity;
 
+import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -47,7 +48,12 @@ public class ForgetActivity extends PresenterActivity<ForgetPresenter> {
     protected void initControls() {
         super.initControls();
 
-        title.setText("找回密码");
+        String action = getIntent().getStringExtra("action");
+        if (!TextUtils.isEmpty(action) && "reset".equals(action)){
+            title.setText("修改密码");
+        }else{
+            title.setText("找回密码");
+        }
     }
 
     public void forgetSuccess() {
