@@ -30,7 +30,7 @@ public class OrderController {
 
     @ResponseBody
     @RequestMapping("/addOrder")
-    public Map<String, Object> addOrder(@RequestBody Order order) {
+    public Map<String, Object> addOrder(Order order) {
         log.info("addOrder入参order:{}", order);
         Map<String, Object> map = Maps.newHashMap();
         try {
