@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.OrderMapper">
+    <resultMap id="order" type="com.example.demo.entity.Order">
+        <result column="id" property="id"/>
+        <result column="student_id" property="student_id"/>
+        <result column="table" property="table"/>
+        <result column="price" property="price"/>
+        <result column="state" property="state"/>
+        <result column="create_time" property="create_time"/>
+    </resultMap>
+
+    <insert id="addOrder" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_order (`student_id`,`table`, `state`, create_time)
+        VALUES (#{student_id},#{table}, "0", now())
+    </insert>
+
+    <insert id="addOrderProduct">
+        INSERT INTO tb_order_product (`order_id`,`product_id`, `num`)
+        VALUES
+        <foreach collection="oplist" item="item" index="index" separator=",">
+            (#{order_id},#{item.product.id}, #{item.num})
+        </foreach>
+    </insert>
+
+    <update id="calculatePrice">
+        UPDATE tb_order
+        SET
+            `price`  = #{price}
+        WHERE id = #{id}
+    </update>
+
+    <update id="payOrder">
+        UPDATE tb_order
+        SET
+            `state`  = "1"
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteOrder">
+        delete from tb_order
+        WHERE id = #{id}
+    </delete>
+
+    <select id="selectOrderProduct" resultType="hashmap">
+        select
+        `id`,
+        `order_id`,
+        `product_id`,
+        `num`
+        from tb_order_product
+        where `order_id` = #{id}
+    </select>
+
+    <select id="selectOrder" resultMap="order">
+        SELECT
+        `id`,
+        `student_id`,
+        `price`,
+        `table`,
+        `state`,
+        create_time
+        from tb_order
+        where true
+        <if test="student_id!=null and student_id!='' and student_id!=0">
+            and student_id = #{student_id}
+        </if>
+        <if test="id!=null and id!='' and id!=0">
+            and id = #{id}
+        </if>
+        order by create_time desc
+    </select>
+</mapper>

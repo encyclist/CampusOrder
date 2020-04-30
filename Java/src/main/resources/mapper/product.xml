@@ -46,4 +46,29 @@
             and id = #{id}
         </if>
     </select>
+
+    <select id="selectProductById" resultMap="product">
+        SELECT
+        id,
+        `name`,
+        `img`,
+        `description`,
+        `price`
+        from tb_product
+        where id = #{id}
+    </select>
+
+    <select id="selectProductPriceById" resultMap="product">
+        SELECT
+        id,
+        `name`,
+        `img`,
+        `description`,
+        `price`
+        from tb_product
+        where
+        <foreach collection="oplist" item="item" index="index" separator="or">
+            id = #{item.product.id}
+        </foreach>
+    </select>
 </mapper>

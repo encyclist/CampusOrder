@@ -1,12 +1,15 @@
 package com.example.demo.mapper;
 
+import com.example.demo.entity.OrderProduct;
 import com.example.demo.entity.Product;
 import com.example.demo.entity.User;
 import com.example.demo.service.ProductQueryCondition;
 import com.example.demo.service.UserQueryCondition;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -24,4 +27,8 @@ public interface ProductMapper {
     public void updateProduct(Product product);
     //查询商品
     public List<Product> selectProduct(ProductQueryCondition condition);
+    //按id集合计算订单总价
+    public List<Product> selectProductPriceById(@Param("oplist") List<OrderProduct> oplist);
+    //按id查询商品
+    public Product selectProductById(long id);
 }
