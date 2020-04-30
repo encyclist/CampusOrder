@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.StudentMapper">
+    <resultMap id="student" type="com.example.demo.entity.Student">
+        <result column="id" property="id"/>
+        <result column="tel" property="tel"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!-- 登录 -->
+    <select id="login" resultMap="student">
+        SELECT
+            `id`,
+            `tel`,
+            `password`
+        FROM
+            tb_student
+        WHERE tel = #{tel}
+              AND password = #{password}
+    </select>
+
+    <insert id="addStudent" useGeneratedKeys="true" keyProperty="id" >
+        INSERT INTO tb_student (`tel`,`password`)
+        VALUES (#{tel}, #{password})
+    </insert>
+
+</mapper>
