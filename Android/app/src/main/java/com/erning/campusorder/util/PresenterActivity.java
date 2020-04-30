@@ -7,9 +7,11 @@ import androidx.annotation.CallSuper;
 import com.erning.common.absbase.AbsBaseActivity;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class PresenterActivity<Presenter extends ActivityPresenter> extends AbsBaseActivity {
 
+    private Unbinder unbinder;
     protected Presenter presenter;
 
     @Override
@@ -22,7 +24,7 @@ public abstract class PresenterActivity<Presenter extends ActivityPresenter> ext
     @Override
     @CallSuper
     protected void initControls() {
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
     }
 
     public String getUserId(){
@@ -40,6 +42,9 @@ public abstract class PresenterActivity<Presenter extends ActivityPresenter> ext
         // 界面关闭时进行销毁的操作
         if (presenter != null) {
             presenter.destroy();
+        }
+        if (unbinder != null){
+            unbinder.unbind();
         }
     }
 

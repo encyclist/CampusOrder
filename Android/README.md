@@ -6,6 +6,7 @@
 * JSON解析 [fastjson](https://www.cnblogs.com/felixzh/p/8551796.html)
 * 下拉刷新 [SmartRefreshLayout](https://www.jianshu.com/p/29e315ff44a6)
 * 控件绑定[butterknife](https://www.jianshu.com/p/5dead31a84f6)
+* 图片加载[Fresco](https://www.fresco-cn.org/)
 * [qmui](https://qmuiteam.com/android/documents/)
 
 ## 关键代码
@@ -33,4 +34,5 @@
 * 数据分页加载相关：加载数据（参数传page和limit），每页加载20条数据，最后一条显示出来时候就去加载第二页
 * 欢迎页面动画相关：一个第三方控件，是它自带的动画
 * 首页怎么实现的这种效果：ViewPager是可以左右滑动的，里有3个Fragment。当BottomNavigationView(下面的三个按钮)被点击时就让ViewPager滑动到指定的地方
+* 图片怎么加载的：一个叫Fresco的库可以显示图片
 * 最上面的`用到的技术`要多看看

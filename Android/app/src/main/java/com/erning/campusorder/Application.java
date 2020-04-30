@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.erning.campusorder.activity.LoginActivity;
 import com.erning.common.sharedperference.SharedPreferencesUtil;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class Application extends android.app.Application {
         super.onCreate();
 
         instance = this;
+        Fresco.initialize(this);
 
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override

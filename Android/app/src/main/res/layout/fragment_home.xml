@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBase"
     tools:context=".fragment.HomeFragment">
 
-    <include layout="@layout/title"/>
+    <include layout="@layout/title" android:id="@+id/include_home"/>
 
-</FrameLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_below="@id/include_home"
+        android:layout_above="@id/relative_home"
+        android:id="@+id/refresh_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/list_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:background="#fff"
+        android:padding="4dp"
+        android:id="@+id/relative_home"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_home_money"
+            android:textSize="16sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="￥0.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btn_home_order"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            app:qmui_borderWidth="0px"
+            app:qmui_radius="5dp"
+            app:qmui_backgroundColor="@color/red"
+            android:layout_alignParentEnd="true"
+            android:text="结算"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

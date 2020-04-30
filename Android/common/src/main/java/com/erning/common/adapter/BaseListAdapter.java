@@ -14,10 +14,8 @@ import java.util.List;
 
 public abstract class BaseListAdapter<T> extends BaseAdapter {
     protected List<T> dataList;
-    protected Activity activity;
 
-    public BaseListAdapter(Activity activity, List<T> list) {
-        this.activity = activity;
+    public BaseListAdapter(List<T> list) {
         this.dataList = list;
     }
 
@@ -34,10 +32,6 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
-    }
-
-    protected View inflate(int layout) {
-        return View.inflate(activity, layout, null);
     }
 
     public List<T> getData(){
@@ -89,9 +83,5 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
     public void remove(T item){
         dataList.remove(item);
         notifyDataSetChanged();
-    }
-
-    public void toast(String str){
-        Toast.makeText(activity,str,Toast.LENGTH_SHORT).show();
     }
 }
