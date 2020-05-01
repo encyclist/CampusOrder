@@ -1,5 +1,7 @@
 package com.erning.campusorder.entity;
 
+import com.erning.common.net.Network;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,7 +23,7 @@ public class Produce implements Serializable {
     }
 
     public String getImg() {
-        return img;
+        return Network.ROOT+"IMG/"+img;
     }
 
     public void setImg(String img) {
@@ -29,7 +31,7 @@ public class Produce implements Serializable {
     }
 
     public String getName() {
-        return name;
+        return name==null ? "" : name;
     }
 
     public void setName(String name) {
@@ -37,7 +39,7 @@ public class Produce implements Serializable {
     }
 
     public String getDescription() {
-        return description;
+        return description==null ? "" : description;
     }
 
     public void setDescription(String description) {

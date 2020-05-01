@@ -29,7 +29,7 @@ public class HomePresenter extends FragmentPresenter<HomeFragment> {
         service.getProduceList(page,limit).enqueue(new CallBack<JsonRst>() {
             @Override
             protected void result(@NonNull JsonRst body) {
-                List<Produce> products = body.getArray().toJavaList(Produce.class);
+                List<Produce> products = body.getData().getJSONArray("list").toJavaList(Produce.class);
                 if (page == 1){
                     getView().setData(products);
                 }else{

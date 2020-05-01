@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,7 +20,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -144,6 +142,7 @@ public class HomeFragment extends PresenterFragment<HomePresenter> {
             TextView desc = view.findViewById(R.id.text_item_product_desc);
             ImageView add = view.findViewById(R.id.img_item_product_add);
             TextView count = view.findViewById(R.id.text_item_product_count);
+            TextView price = view.findViewById(R.id.text_item_product_price);
             ImageView sub = view.findViewById(R.id.img_item_product_sub);
             Produce item = getItem(position);
 
@@ -151,6 +150,7 @@ public class HomeFragment extends PresenterFragment<HomePresenter> {
             name.setText(item.getName());
             desc.setText(item.getDescription());
             count.setText(""+item.getCount());
+            price.setText("￥ "+item.getPrice());
             add.setTag(item);
             add.setOnClickListener(onClickAdd);
             sub.setTag(item);

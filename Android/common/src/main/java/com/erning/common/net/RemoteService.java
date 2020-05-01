@@ -25,6 +25,6 @@ public interface RemoteService {
     @POST("getUserInfo")//获取用户信息
     Call<JsonRst> getUserInfo(@Query("id")String id);
 
-    @POST("getProduceList")//获取菜单
-    Call<JsonRst> getProduceList(@Query("page")int page,@Query("limit")int limit);
+    @POST("product/selectProduct")//获取菜单
+    Call<JsonRst> getProduceList(@Query("pageNum")int page,@Query("pageSize")int limit);
 }
