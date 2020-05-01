@@ -19,6 +19,7 @@ import com.erning.campusorder.util.PresenterFragment;
 import com.erning.common.adapter.BaseListAdapter;
 import com.erning.common.net.bean.Order;
 import com.erning.common.net.bean.Produce;
+import com.erning.common.utils.MD5_Calc;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -99,6 +100,7 @@ public class OrderFragment extends PresenterFragment<OrderPresenter> {
             TextView state = view.findViewById(R.id.text_item_order_state);
             TextView time = view.findViewById(R.id.text_item_order_time);
             TextView products = view.findViewById(R.id.text_item_order_products);
+            TextView no = view.findViewById(R.id.text_item_order_no);
             Order item = getItem(position);
 
             if ("0".equals(item.getState())){
@@ -108,8 +110,9 @@ public class OrderFragment extends PresenterFragment<OrderPresenter> {
                 state.setText("已完成");
                 state.setTextColor(ContextCompat.getColor(getActivity(),R.color.colorPrimary));
             }
-            time.setText("下单时间："+item.getCreate_time());
-            products.setText("总价：￥"+item.getPrice());
+            time.setText("下单时间：" + item.getCreate_time());
+            products.setText("总价：￥" + item.getPrice());
+            no.setText("订单号：" + MD5_Calc.Md5(item.getId()+item.getCreate_time()));
 
             return view;
         }
