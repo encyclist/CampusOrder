@@ -23,6 +23,7 @@ import butterknife.OnClick;
 
 public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter> {
     private Adapter adapter = new Adapter();
+    private int orderId = -1;
 
     @BindView(R.id.text_title) TextView text_title;
     @BindView(R.id.text_orderDetail_total) TextView text_total;
@@ -49,7 +50,7 @@ public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter>
 
         list_list.setAdapter(adapter);
 
-        int orderId = getIntent().getIntExtra("id",-1);
+        orderId = getIntent().getIntExtra("id",-1);
         presenter.getOrderInfo(orderId);
     }
 
@@ -64,7 +65,7 @@ public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter>
         new AlertDialog.Builder(this)
                 .setMessage("确认支付")
                 .setMessage("现在进行支付吗？")
-                .setPositiveButton("确定", (dialog, which) -> presenter.pay(getIntent().getIntExtra("id",-1)))
+                .setPositiveButton("确定", (dialog, which) -> presenter.pay(orderId))
                 .setNegativeButton("取消",null)
                 .show();
     }
@@ -85,7 +86,7 @@ public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter>
                 builder.setTitle("确定删除订单吗");
                 builder.setMessage("删除后不可找回，确定吗？");
             }
-            builder.setPositiveButton("确定", (dialog, which) -> presenter.deleteOrder(getIntent().getIntExtra("id",-1)));
+            builder.setPositiveButton("确定", (dialog, which) -> presenter.deleteOrder(orderId));
             builder.setNegativeButton("取消", null);
             builder.show();
         });
