@@ -1,8 +1,10 @@
 package com.erning.campusorder.activity;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ import com.erning.common.adapter.BaseListAdapter;
 import com.erning.common.net.bean.Order;
 import com.erning.common.net.bean.Produce;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import java.util.ArrayList;
 
@@ -31,6 +34,7 @@ public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter>
     @BindView(R.id.text_title_text) TextView text_cancel;
     @BindView(R.id.text_orderDetail_time) TextView text_time;
     @BindView(R.id.text_orderDetail_state) TextView text_state;
+    @BindView(R.id.btn_orderDetail_pay) QMUIRoundButton btn_pay;
 
     @Override
     protected int getLayoutResId() {
@@ -49,6 +53,11 @@ public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter>
         text_title.setText("订单详情");
 
         list_list.setAdapter(adapter);
+        list_list.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(OrderDetailActivity.this,ProductDetailActivity.class);
+            intent.putExtra("item",adapter.getItem(position));
+            startActivity(intent);
+        });
 
         orderId = getIntent().getIntExtra("id",-1);
         presenter.getOrderInfo(orderId);
@@ -90,6 +99,9 @@ public class OrderDetailActivity extends PresenterActivity<OrderDetailPresenter>
             builder.setNegativeButton("取消", null);
             builder.show();
         });
+        if (!order.getState().equals("0")){
+            btn_pay.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void deleteSuccess() {

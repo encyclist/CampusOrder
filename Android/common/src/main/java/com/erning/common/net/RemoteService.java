@@ -41,4 +41,7 @@ public interface RemoteService {
 
     @POST("order/payOrder")//支付订单
     Call<JsonRst> payOrder(@Query("id")int id);
+
+    @POST("order/selectOrder")//获取订单列表
+    Call<JsonRst> getOrderList(@Query("pageNum")int page,@Query("pageSize")int limit,@Query("student_id")int id);
 }

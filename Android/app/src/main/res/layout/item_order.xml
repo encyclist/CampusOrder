@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:translationZ="6dp"
+        android:background="@drawable/bg_10dp_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_item_order_state"
+            android:text="已完成"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorGary6"
+            android:id="@+id/text_item_order_time"
+            android:layout_below="@id/text_item_order_state"
+            android:text="下单时间：2020年5月1日14点42分"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/view_item_order"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/text_item_order_time"
+            android:background="#666"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+        <TextView
+            android:id="@+id/text_item_order_products"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/view_item_order"
+            android:text="吃吃吃"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
