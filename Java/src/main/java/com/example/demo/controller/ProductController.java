@@ -71,7 +71,7 @@ public class ProductController {
 
     @ResponseBody
     @RequestMapping("/selectProduct")
-    public Map<String, Object> selectProduct(ProductQueryCondition condition) {
+    public Map<String, Object> selectProduct(@RequestBody ProductQueryCondition condition) {
         log.info("selectProduct入参id:{}", condition);
         Map<String, Object> map = Maps.newHashMap();
         try {
