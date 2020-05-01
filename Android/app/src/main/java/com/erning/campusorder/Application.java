@@ -25,6 +25,7 @@ public class Application extends android.app.Application {
 
     public static void logout() {
         SharedPreferencesUtil.putSpString(instance,"id","");
+        SharedPreferencesUtil.putSpString(instance,"tel","");
 
         Intent intent = new Intent(instance,LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

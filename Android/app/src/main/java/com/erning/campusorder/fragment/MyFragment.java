@@ -31,7 +31,8 @@ public class MyFragment extends PresenterFragment<MyPresenter> {
 
     @Override
     protected void initData() {
-        presenter.init();
+//        presenter.init();
+        txt_phone.setText(getSpString("tel"));
     }
 
     public void showUserInfo(User user) {
