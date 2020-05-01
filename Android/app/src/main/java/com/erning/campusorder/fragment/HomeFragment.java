@@ -120,6 +120,7 @@ public class HomeFragment extends PresenterFragment<HomePresenter> {
             Produce item = (Produce) v.getTag();
             item.setCount(item.getCount()-1);
             notifyDataSetChanged();
+            calculator();
         };
 
         Adapter() {
