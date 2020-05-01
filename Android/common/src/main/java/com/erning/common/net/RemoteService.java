@@ -13,11 +13,11 @@ import retrofit2.http.Query;
  */
 public interface RemoteService {
 
-    @POST("login")//登录
-    Call<JsonRst> login(@Query("phone") String phone, @Query("password")String password);
+    @POST("student/login")//登录
+    Call<JsonRst> login(@Query("tel") String phone, @Query("password")String password);
 
-    @POST("register")//注册
-    Call<JsonRst> register(@Query("phone") String phone, @Query("password")String password);
+    @POST("student/addStudent")//注册
+    Call<JsonRst> register(@Query("tel") String phone, @Query("password")String password);
 
     @POST("forget")//找回密码
     Call<JsonRst> forget(@Query("phone")String phone, @Query("code")String code, @Query("pwd")String pwd);

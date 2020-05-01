@@ -27,7 +27,8 @@ public class LoginPresenter extends ActivityPresenter<LoginActivity> {
             @Override
             protected void result(@NonNull JsonRst body) {
                 String id = body.getData().getString("id");
-                getView().loginSuccess(id);
+                String tel = body.getData().getString("tel");
+                getView().loginSuccess(id,tel);
             }
         });
     }
@@ -46,7 +47,8 @@ public class LoginPresenter extends ActivityPresenter<LoginActivity> {
             @Override
             protected void result(@NonNull JsonRst body) {
                 String id = body.getData().getString("id");
-                getView().loginSuccess(id);
+                String tel = body.getData().getString("tel");
+                getView().loginSuccess(id,tel);
             }
         });
     }

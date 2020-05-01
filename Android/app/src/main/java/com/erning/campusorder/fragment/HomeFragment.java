@@ -31,8 +31,8 @@ public class HomeFragment extends PresenterFragment<HomePresenter> {
 
     @BindView(R.id.img_title_back) ImageView img_back;
     @BindView(R.id.text_title) TextView text_title;
-    @BindView(R.id.text_title) SmartRefreshLayout refresh_home;
-    @BindView(R.id.text_title) ListView list_home;
+    @BindView(R.id.refresh_home) SmartRefreshLayout refresh_home;
+    @BindView(R.id.list_home) ListView list_home;
     @BindView(R.id.text_home_money) TextView text_money;
 
     @Override

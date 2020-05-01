@@ -1,6 +1,5 @@
 package com.erning.campusorder.activity;
 
-import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -77,8 +76,9 @@ public class LoginActivity extends PresenterActivity<LoginPresenter> {
         }
     }
 
-    public void loginSuccess(String id) {
+    public void loginSuccess(String id,String tel) {
         putSpString("id",id);
+        putSpString("tel",tel);
         startActivity(MainActivity.class);
         this.finish();
     }

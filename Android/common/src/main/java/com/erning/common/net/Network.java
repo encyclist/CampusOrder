@@ -15,7 +15,8 @@ import retrofit2.Retrofit;
  * @version 1.0.0
  */
 public class Network {
-    public static final String ROOT = "http://47.101.44.42:10208/";
+    public static final String ROOT = "http://192.168.199.90:10208/";
+//    public static final String ROOT = "http://47.101.44.42:10208/";
     public static String Authorization = "";
 
     private static Network instance = new Network();
