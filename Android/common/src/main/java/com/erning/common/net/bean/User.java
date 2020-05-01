@@ -1,4 +1,4 @@
-package com.erning.campusorder.entity;
+package com.erning.common.net.bean;
 
 public class User {
     private int id;

@@ -2,11 +2,13 @@ package com.erning.campusorder.presenter;
 
 import androidx.annotation.NonNull;
 
-import com.erning.campusorder.entity.Produce;
+import com.erning.common.net.bean.Order;
+import com.erning.common.net.bean.OrderProduct;
+import com.erning.common.net.bean.Produce;
 import com.erning.campusorder.fragment.HomeFragment;
 import com.erning.campusorder.util.CallBack;
 import com.erning.campusorder.util.FragmentPresenter;
-import com.erning.common.net.bean.result.JsonRst;
+import com.erning.common.net.bean.JsonRst;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,16 +64,22 @@ public class HomePresenter extends FragmentPresenter<HomeFragment> {
             return;
 
         float total = 0;
-        List<Produce> produces = new ArrayList<>();
+        List<OrderProduct> produces = new ArrayList<>();
         for (Produce produce:data){
-            total += produce.getCount()*Double.parseDouble(produce.getPrice());
             if (produce.getCount() > 0){
                 // 找到所有数量不为0的餐品
-                produces.add(produce);
+                total += produce.getCount()*Double.parseDouble(produce.getPrice());
+                produces.add(new OrderProduct(produce,produce.getCount()));
             }
         }
         if (produces.size() > 0){
-            // TODO 下单 getView().orderSuccess(id)
+            service.addOrder(new Order(Integer.parseInt(getUserId()),"0",total,produces)).enqueue(new CallBack<JsonRst>() {
+                @Override
+                protected void result(@NonNull JsonRst body) {
+                    Order order = body.getData().toJavaObject(Order.class);
+                    getView().orderSuccess(order.getId());
+                }
+            });
         }
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.erning.campusorder.R;
-import com.erning.campusorder.entity.Produce;
+import com.erning.common.net.bean.Produce;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import butterknife.BindView;

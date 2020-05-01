@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import com.erning.campusorder.activity.ForgetActivity;
 import com.erning.campusorder.util.ActivityPresenter;
 import com.erning.campusorder.util.CallBack;
-import com.erning.common.net.bean.result.JsonRst;
+import com.erning.common.net.bean.JsonRst;
 
 public class ForgetPresenter extends ActivityPresenter<ForgetActivity> {
     public ForgetPresenter(ForgetActivity forgetActivity) {

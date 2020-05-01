@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.erning.campusorder.R;
 import com.erning.campusorder.activity.OrderActivity;
 import com.erning.campusorder.activity.ProductDetailActivity;
-import com.erning.campusorder.entity.Produce;
+import com.erning.common.net.bean.Produce;
 import com.erning.campusorder.presenter.HomePresenter;
 import com.erning.campusorder.util.PresenterFragment;
 import com.erning.common.adapter.BaseListAdapter;

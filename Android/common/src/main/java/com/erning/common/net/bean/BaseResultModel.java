@@ -1,4 +1,4 @@
-package com.erning.common.net.bean.result;
+package com.erning.common.net.bean;
 
 /**
  * Created by abs on 2018/4/19.

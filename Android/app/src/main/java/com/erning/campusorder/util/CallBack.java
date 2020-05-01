@@ -6,7 +6,7 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 
 import com.erning.campusorder.Application;
-import com.erning.common.net.bean.result.BaseResultModel;
+import com.erning.common.net.bean.BaseResultModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;

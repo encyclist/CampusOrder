@@ -1,4 +1,4 @@
-package com.erning.common.net.bean.result;
+package com.erning.common.net.bean;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

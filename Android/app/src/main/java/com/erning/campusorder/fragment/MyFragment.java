@@ -8,8 +8,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.erning.campusorder.Application;
 import com.erning.campusorder.R;
 import com.erning.campusorder.activity.ForgetActivity;
-import com.erning.campusorder.activity.ResetActivity;
-import com.erning.campusorder.entity.User;
+import com.erning.common.net.bean.User;
 import com.erning.campusorder.presenter.MyPresenter;
 import com.erning.campusorder.util.PresenterFragment;
 

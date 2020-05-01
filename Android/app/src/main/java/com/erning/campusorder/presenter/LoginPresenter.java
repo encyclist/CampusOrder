@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import com.erning.campusorder.activity.LoginActivity;
 import com.erning.campusorder.util.ActivityPresenter;
 import com.erning.campusorder.util.CallBack;
-import com.erning.common.net.bean.result.JsonRst;
+import com.erning.common.net.bean.JsonRst;
 
 public class LoginPresenter extends ActivityPresenter<LoginActivity> {
     public LoginPresenter(LoginActivity loginActivity) {

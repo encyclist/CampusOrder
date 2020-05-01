@@ -1,10 +1,10 @@
 package com.erning.common.net;
 
-import com.erning.common.net.bean.result.JsonRst;
-
-import java.lang.ref.Reference;
+import com.erning.common.net.bean.JsonRst;
+import com.erning.common.net.bean.Order;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -27,4 +27,7 @@ public interface RemoteService {
 
     @POST("product/selectProduct")//获取菜单
     Call<JsonRst> getProduceList(@Query("pageNum")int page,@Query("pageSize")int limit);
+
+    @POST("order/addOrder")//下单
+    Call<JsonRst> addOrder(@Body Order order);
 }

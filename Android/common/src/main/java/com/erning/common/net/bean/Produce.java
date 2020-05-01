@@ -1,4 +1,4 @@
-package com.erning.campusorder.entity;
+package com.erning.common.net.bean;
 
 import com.erning.common.net.Network;
 
