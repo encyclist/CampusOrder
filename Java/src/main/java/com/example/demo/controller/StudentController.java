@@ -72,4 +72,27 @@ public class StudentController {
         return map;
     }
 
+    @ResponseBody
+    @RequestMapping("/updateStudent")
+    public Map<String, Object> updateStudent(Student student) {
+        log.info("updateStudent入参student:{}", student.toString());
+        Map<String, Object> map = Maps.newHashMap();
+        try {
+            if(student.getYzm().equals("123456")) {
+                studentService.updateStudent(student);
+                map.put("code", 0);
+                map.put("msg", "修改密码成功");
+                map.put("data", student);
+            }else{
+                map.put("code", 1);
+                map.put("msg", "验证码不正确");
+            }
+        } catch (Exception e) {
+            log.error("e:{}", e);
+            map.put("code", 1);
+            map.put("msg", "修改密码失败");
+        }
+        return map;
+    }
+
 }

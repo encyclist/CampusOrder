@@ -21,4 +21,5 @@ public interface StudentMapper {
      */
     public Student login(Student student);
     public Long addStudent(Student student);
+    public void updateStudent(Student student);
 }

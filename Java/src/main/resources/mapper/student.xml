@@ -25,4 +25,10 @@
         VALUES (#{tel}, #{password})
     </insert>
 
+    <update id="updateStudent">
+        update tb_student set
+        password = #{password}
+        where tel = #{tel}
+    </update>
+
 </mapper>

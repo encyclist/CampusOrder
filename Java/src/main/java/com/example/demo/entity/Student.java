@@ -9,6 +9,7 @@ public class Student {
     private Long id;
     private String tel;
     private String password;
+    private String yzm;
 
     @Override
     public String toString() {
@@ -16,6 +17,7 @@ public class Student {
                 "id=" + id +
                 ", tel='" + tel + '\'' +
                 ", password='" + password + '\'' +
+                ", yzm='" + yzm + '\'' +
                 '}';
     }
 }

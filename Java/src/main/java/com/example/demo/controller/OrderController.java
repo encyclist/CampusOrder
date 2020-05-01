@@ -37,6 +37,7 @@ public class OrderController {
             orderService.addOrder(order);
             map.put("code", 0);
             map.put("msg", "新增订单成功");
+            map.put("data", order);
         } catch (Exception e) {
             log.error("e:{}", e);
             map.put("code", 1);

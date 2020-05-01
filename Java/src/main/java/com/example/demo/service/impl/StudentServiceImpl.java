@@ -25,4 +25,9 @@ public class StudentServiceImpl implements StudentService {
     public Long addStudent(Student student) {
         return studentMapper.addStudent(student);
     }
+
+    @Override
+    public void updateStudent(Student student) {
+        studentMapper.updateStudent(student);
+    }
 }
