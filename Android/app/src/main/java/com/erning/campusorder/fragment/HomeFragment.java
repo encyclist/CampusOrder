@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.erning.campusorder.R;
-import com.erning.campusorder.activity.OrderActivity;
+import com.erning.campusorder.activity.OrderDetailActivity;
 import com.erning.campusorder.activity.ProductDetailActivity;
 import com.erning.common.net.bean.Produce;
 import com.erning.campusorder.presenter.HomePresenter;
@@ -87,7 +87,7 @@ public class HomeFragment extends PresenterFragment<HomePresenter> {
     }
 
     public void orderSuccess(int id){
-        Intent intent = new Intent(getActivity(), OrderActivity.class);
+        Intent intent = new Intent(getActivity(), OrderDetailActivity.class);
         intent.putExtra("id",id);
         startActivity(intent);
     }

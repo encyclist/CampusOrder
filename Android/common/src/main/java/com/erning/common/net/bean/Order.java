@@ -1,5 +1,6 @@
 package com.erning.common.net.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
@@ -75,5 +76,28 @@ public class Order {
 
     public void setOplist(List<OrderProduct> oplist) {
         this.oplist = oplist;
+    }
+
+    public List<Produce> getProducts(){
+        List<Produce> produces = new ArrayList<>(oplist.size());
+        for(OrderProduct produce:oplist){
+            Produce p = produce.getProduct();
+            p.setCount(produce.getNum());
+            produces.add(p);
+        }
+        return produces;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", student_id=" + student_id +
+                ", table='" + table + '\'' +
+                ", price=" + price +
+                ", state='" + state + '\'' +
+                ", create_time='" + create_time + '\'' +
+                ", oplist=" + oplist +
+                '}';
     }
 }

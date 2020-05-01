@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBase"
+    tools:context=".activity.OrderDetailActivity">
+
+    <include layout="@layout/title" android:id="@+id/include_orderDetail"/>
+
+    <ListView
+        android:id="@+id/list_orderDetail"
+        android:layout_above="@id/relative_orderDetail"
+        android:layout_below="@id/include_orderDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_orderDetail"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/colorGary6"
+            android:id="@+id/text_orderDetail_time"
+            android:text="下单时间：2020年5月1日13点35分"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/text_orderDetail_state"
+            android:layout_below="@id/text_orderDetail_time"
+            android:text="订单状态：待支付"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_below="@id/text_orderDetail_state"
+            android:background="#666"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+        <TextView
+            android:layout_marginStart="8dp"
+            android:layout_alignTop="@id/btn_orderDetail_pay"
+            android:layout_alignBottom="@id/btn_orderDetail_pay"
+            android:gravity="center_vertical"
+            android:id="@+id/text_orderDetail_total"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:text="￥ 0.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@id/text_orderDetail_state"
+            android:id="@+id/btn_orderDetail_pay"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            app:qmui_borderWidth="0px"
+            app:qmui_radius="5dp"
+            app:qmui_backgroundColor="@color/red"
+            android:layout_alignParentEnd="true"
+            android:text="确认支付"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

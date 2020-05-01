@@ -3,6 +3,8 @@ package com.erning.common.net;
 import com.erning.common.net.bean.JsonRst;
 import com.erning.common.net.bean.Order;
 
+import java.lang.ref.Reference;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -30,4 +32,13 @@ public interface RemoteService {
 
     @POST("order/addOrder")//下单
     Call<JsonRst> addOrder(@Body Order order);
+
+    @POST("order/selectOrderById")//获取订单信息
+    Call<JsonRst> selectOrderById(@Query("id")int id);
+
+    @POST("order/deleteOrder")//取消/删除订单
+    Call<JsonRst> deleteOrder(@Query("id")int id);
+
+    @POST("order/payOrder")//支付订单
+    Call<JsonRst> payOrder(@Query("id")int id);
 }

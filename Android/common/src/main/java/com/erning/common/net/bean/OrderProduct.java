@@ -27,4 +27,12 @@ public class OrderProduct {
     public void setNum(int num) {
         this.num = num;
     }
+
+    @Override
+    public String toString() {
+        return "OrderProduct{" +
+                "product=" + product +
+                ", num=" + num +
+                '}';
+    }
 }

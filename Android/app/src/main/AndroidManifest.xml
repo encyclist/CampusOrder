@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".activity.ProductDetailActivity"></activity>
-        <activity android:name=".activity.OrderActivity" />
+        <activity android:name=".activity.OrderDetailActivity" />
         <activity android:name=".activity.ResetActivity" />
         <activity android:name=".activity.ForgetActivity" />
         <activity android:name=".activity.WelcomeActivity" >
