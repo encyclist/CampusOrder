@@ -2,6 +2,7 @@ package com.erning.common.net;
 
 import com.erning.common.net.bean.JsonRst;
 import com.erning.common.net.bean.Order;
+import com.erning.common.net.bean.Page;
 
 import java.lang.ref.Reference;
 
@@ -28,7 +29,7 @@ public interface RemoteService {
     Call<JsonRst> getUserInfo(@Query("id")String id);
 
     @POST("product/selectProduct")//获取菜单
-    Call<JsonRst> getProduceList(@Query("pageNum")int page,@Query("pageSize")int limit);
+    Call<JsonRst> getProduceList(@Body Page page);
 
     @POST("order/addOrder")//下单
     Call<JsonRst> addOrder(@Body Order order);

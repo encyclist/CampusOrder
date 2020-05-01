@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.erning.common.net.bean.Order;
 import com.erning.common.net.bean.OrderProduct;
+import com.erning.common.net.bean.Page;
 import com.erning.common.net.bean.Produce;
 import com.erning.campusorder.fragment.HomeFragment;
 import com.erning.campusorder.util.CallBack;
@@ -28,7 +29,7 @@ public class HomePresenter extends FragmentPresenter<HomeFragment> {
 
     private void getData(){
         page++;
-        service.getProduceList(page,limit).enqueue(new CallBack<JsonRst>() {
+        service.getProduceList(new Page(page,limit)).enqueue(new CallBack<JsonRst>() {
             @Override
             protected void result(@NonNull JsonRst body) {
                 List<Produce> products = body.getData().getJSONArray("list").toJavaList(Produce.class);
