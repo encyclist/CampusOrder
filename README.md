@@ -1,4 +1,5 @@
 # 校园点餐系统
+同学要的，后来又不要了，现在开源免费试用
 
 ## 用到的技术
 * 持久层框架 [mybatis](https://www.w3cschool.cn/mybatis/)
